@@ -63,5 +63,8 @@ typings/
 # macOS
 .DS_Store
 
+#package-lock
+package-lock.json
+
 # VS Code
 .vscode/
