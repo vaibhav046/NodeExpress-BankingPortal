@@ -53,7 +53,7 @@ app.post('/transfer', (req, res) => {
     const accountsJSON = JSON.stringify(accounts);
     // const writePath = path.join(__dirname, "json/accounts.json");
     console.log(path.join(__dirname, "json/accounts.json"));
-    fs.writeFileSync(path.join(__dirname, "json/accounts.json"), { accountsJSON }, { encoding: 'utf8' });
+    fs.writeFileSync("../../src/json/accounts.json", { accountsJSON }, { encoding: 'utf8' });
     res.render('transfer', { message: "Transfer Completed" });
 });
 
@@ -66,7 +66,7 @@ app.post('/payment', (req, res) => {
     accounts.credit.available = parseInt(accounts.credit.available) + parseInt(req.body.amount);
     const accountsJSON = JSON.stringify(accounts);
     // const writePath = path.join(__dirname, "json/accounts.json");
-    fs.writeFileSync(path.join(__dirname, "json/payments.json"), { accountsJSON }, { encoding: 'utf8' });
+    fs.writeFileSync("../../src/json/payments.json", { accountsJSON }, { encoding: 'utf8' });
     res.render('payment', { message: "Payment Successful", account: accounts.credit });
 });
 
